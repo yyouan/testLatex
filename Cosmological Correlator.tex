@@ -1,0 +1,726 @@
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+\usepackage[pdftex]{graphics}
+%\usepackage{mathpazo}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{tcolorbox}
+%\usepackage{cite}
+%\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{multirow}
+%\usepackage{epstopdf}
+%\usepackage{showkeys}
+\usepackage{array,booktabs}
+%\usepackage{tikz}
+\usepackage{slashed}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage{jheppub}
+%\usepackage{mathpazo}
+\usepackage{amsmath,amssymb,amsfonts}
+
+\usepackage{tcolorbox}
+%\usepackage{cite} －
+%\usepackage{cleveref}
+\usepackage{enumitem} 
+\usepackage{multirow}
+%\usepackage{epstopdf}
+%\usepackage{showkeys}
+\usepackage{array,booktabs}
+%\usepackage{tikz}
+\usepackage{slashed}
+\usepackage{wallpaper}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{cancel}
+\usepackage{tabularx}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%
+% AUTHORS' MACROS BEGIN HERE
+%
+
+
+
+%%%%% Simplify some frequently used LaTeX commands %%%%%
+
+
+\newcommand{\eq}{\begin{equation}}
+\newcommand{\eqe}{\end{equation}}
+\newcommand{\eqa}{\begin{eqnarray}}
+\newcommand{\eqae}{\end{eqnarray}}
+\newcommand{\nn}{\nonumber}
+\newcommand{\bn}{\begin{enumerate}}
+\newcommand{\en}{\end{enumerate}}
+\newcommand{\bl}{\begin{align}}
+\newcommand{\el}{\end{align}}
+\newcommand{\ie}{\begin{equation}\begin{aligned}}
+\newcommand{\fe}{\end{aligned}\end{equation}}
+\newcommand{\Res}{\mathop{\mathrm{Res}}}
+\newcommand{\fixme}[1]{{\bf {\color{red}[#1]}}}
+\newcommand{\vecslashed}[1]{\boldsymbol{\slashed{#1}}}
+\newcommand{\boundary}[1]{{\boldsymbol{#1}}}
+
+\newcommand{\newcaption}[1]{\centerline{\parbox{6in}{\caption{#1}}}}
+
+\parskip 0.1 cm
+
+
+%%%%%%%%%%%%% Double line letters using amssymb %%%%%%%%%%%
+
+\def\identity{{\rlap{1} \hskip 1.6pt \hbox{1}}}
+\def\iden{\identity}
+\def\Ds{D \hskip -7pt / \hskip 2pt}
+
+
+\def\dd{\rm d}
+\def\rmd{\rm d}
+
+
+
+%%%%%%%%%%%%%%%%% Mathematical Symbols %%%%%%%%%%%%%%%%%%%%
+
+\def\half{\frac{1}{2}}
+\def\thalf{{\textstyle \frac{1}{2}}}
+\def\imp{\Longrightarrow}
+\def\iff{\Longleftrightarrow}
+\def\goto{\rightarrow}
+\def\para{\parallel}
+%\def\vev#1{\langle #1 \rangle}
+\def\del{\nabla}
+\def\grad{\nabla}
+\def\curl{\nabla\times}
+\def\div{\nabla\cdot}
+\def\p{\partial}
+\def\sp{\slashed{\partial}}
+%\newcommand{\bra}[1]{\langle{#1}|}
+%\newcommand{\ket}[1]{|{#1}\rangle}
+
+\def\identity{{\rlap{1} \hskip 1.6pt \hbox{1}}}
+
+%%%%%%%%%%%%%%%%%%%% Normal font in math %%%%%%%%%%%%%%%%%
+
+\def\Tr{{\rm Tr}}
+\def\tr{{\rm tr}}
+\def\det{{\rm det}}
+\def\TT{{\rm TT}}
+
+
+
+\title{Notes in Cosmological Correlator}
+
+\author[1]{Bo-Ting Chen}
+\author[2]{Zi-Xun Huang}
+\author[2]{Yohan Liu}
+
+\affiliation[1]{Department of Physics, Princeton, NJ 08544, United States of America}
+\affiliation[2]{Department of Physics and Astronomy, National Taiwan University, Taipei 10607, Taiwan}
+
+
+\emailAdd{email}
+
+\abstract
+{
+abstract
+}
+
+
+
+\begin{document}
+\begin{flushright}
+\vspace{10pt} \hfill{NCTS-TH/2004} \vspace{20mm}
+\end{flushright}
+
+\maketitle
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\section{Cosmological Correlator}
+Background of cosmological correlator.
+
+
+
+
+
+\section{Bosonic fields in flat spacetime}
+In this section, we introduce the cosmological correlator for bosonic fields in flat spacetime. We will show how to decompose the correlator into the transverse components and the longitudinal components. The longitudinal part can be fixed by Ward-Takahashi identity. The transversal part can be fixed by the total energy pole and partial energy poles conditions.
+
+\subsection{2pt correlators}
+By dimensional analysis, we can fix the 2pt correlatorÍÍ of scalar fields $O$, vector fields $J^i$, and graviton fields $T^{ij}$ to be
+\ie
+\langle O_{-\boldsymbol{p}} O_{\boldsymbol{p}} \rangle = E_p
+\\
+\langle O_{-\boldsymbol{p}}^{*} O_{\boldsymbol{p}} \rangle = E_p
+\\
+\langle J_{-\boldsymbol{p}}^{i} J_{\boldsymbol{p}}^{j} \rangle =E_p \pi _{ij} 
+\\
+\langle T_{-\boldsymbol{p}}^{ij} T_{\boldsymbol{p}}^{kl} \rangle = E_p \pi _{i,k} \pi _{j,l}
+\fe
+where we defined $ \pi_{ij} \equiv \eta _{ij} + \frac{p_{i} p_{j}}{E_p^2}$.
+
+
+\subsection{3pt correlators}
+Procedure to obtain the 3pt correlators:
+\begin{enumerate}
+\item Decompose the correlator and use Ward-Takahashi identity to determine the longitudinal part.
+\item Apply total energy pole condition to determine the transversal part.
+\end{enumerate}
+
+
+\subsubsection{$\langle J O O^* \rangle$}
+The correlator should satisfy the following two conditions:
+\ie
+&\mathop{\mathrm{Res}}_{{K_T}\rightarrow 0} \epsilon_i  \langle J_{1}^i O_{2} O^*_{3} \rangle 
+= 
+\epsilon_\mu (p_2^\mu - p_3^\mu)
+=
+\epsilon_i \pi^{i}_j (p_2^j - p_3^j)
+\\
+&p_i \langle J_{1}^i O_{2} O^*_{3} \rangle = ie \langle O_{2+1} O^*_{3} \rangle - ie \langle O_{2} O^*_{1+3} \rangle
+\fe
+In the first condition, we used \eqref{eqn: spin 1 amplitude written in pi_ij}. We then show how to determine the correlator.
+\begin{enumerate}
+\item Determine the longitudinal part by Ward-Takahashi identity
+\ie
+\label{eqn: JOO decomposition}
+\langle J_1^i O_2 O_3^* \rangle 
+= \pi^i_j \langle J_1^j O_2 O_3^* \rangle 
+-
+k^i k_j \langle J_1^j O_2 O_3^* \rangle 
+=
+\pi^i_j \langle J_1^j O_2 O_3^* \rangle 
+-
+ie \frac{k^i}{E} (\langle O_{2+1} O^*_{3} \rangle - \langle O_{2} O^*_{1+3} \rangle)
+\fe
+
+\item Determine the transversal part by the total energy pole condition
+\ie
+\label{eqn: JOO total energy pole}
+\mathop{\mathrm{Res}}_{{K_T}\rightarrow 0} \epsilon_i  \langle J_1^i O_2 O_3^* \rangle 
+ = 
+\mathop{\mathrm{Res}}_{{K_T}\rightarrow 0} \epsilon_i \pi^i_j \langle J_1^j O_2 O_3^* \rangle 
+=
+\epsilon_i \pi^{i}_j (p_2^j - p_3^j)
+\fe
+
+
+\item Combining the longitudinal part and the transversal part, we get
+\ie
+\langle J_1^i O_2 O_3^* \rangle 
+= 
+\frac{\pi^{i}_j (p_2^j - p_3^j)}{K_T}
+-
+ie \frac{k^i}{E} (\langle O_{2+1} O^*_{3} \rangle - \langle O_{2} O^*_{1+3} \rangle)
+\fe
+\end{enumerate}
+
+
+\subsection{4pt correlators}
+Procedure to obtain the 4pt correlators:
+\begin{enumerate}
+\item Decompose the correlator and use Ward-Takahashi identity to determine the longitudinal part.
+\item We decompose correspondent amplitude channel by channel and in the s,t,u channel the numerator is in the factorization form.
+\item Apply total energy pole condition on each channel and determine the transverse parts of correlator up to $\mathcal{O}(K_T^0)$.
+\item Apply partial energy pole condition on each channel and determine the transverse parts of the correlator up to $\mathcal{O}(E_L^0)$.
+\item Determine the transverse parts of correlator by requiring $\mathcal{O}(K_T^0)$ and $\mathcal{O}(E_L^0)$ on each channel in the previous steps being consistent.
+\item Afterall, by momentum dimension counting, we could know is there any term like $\mathcal{O}(K_T^0E_L^0E_R^0)$ won't have any pole so cannot be constrainted by residue. (Or, equivalently, we counld say that for the contact term if the $\mathcal{O}(K_T^0)$ term is tolereated by momentum dimension counting?) If there's a unfix term, we need to impose soft limit for the correlator to fix the unfix terms to ensure that it's minimal coupling theory.
+\item Check that the longitudinal part of the correlator determined by step 1 indeed satisfy partial energy pole's residue.
+\end{enumerate}
+
+\subsubsection{$\langle OO^*OO^* \rangle$ exchanging photon}
+
+\textbf{Step 1}. The $\langle OO^*OO^* \rangle$ amplitude in the form of factorization numerator in s,t,u channel:
+
+$$
+M\left( \phi _{1} \phi _{2}^{*} \phi _{3} \phi _{4}^{*}\right) =\frac{1}{s}( p_{2} -p_{1}) \cdot ( p_{4} -p_{3}) +\frac{1}{t}( p_{2} -p_{3}) \cdot ( p_{4} -p_{1})
+$$
+
+\textbf{Step 2}
+To simplify the equations, we consider only the $s$-channel, $\langle O_1O_2^*O_3O_4^* \rangle= \langle O_1O_2^*O_3O_4^* \rangle_s+\langle O_1O_2^*O_3O_4^* \rangle_t$. The computation of the $t$-channel is similar.
+The correlator should satisfy the following conditions:
+($K_T=E_{1234}\ ;\ E_L =E_{12s}\ ;\ E_R=E_{34s}\ ;\ \boldsymbol{p}_s=\boldsymbol{p}_3+\boldsymbol{p}_4$)
+\ie
+\mathop{\mathrm{Res}}_{{K_T}\rightarrow 0} \langle O_1O_2^*O_3O_4^* \rangle_s &= 
+    M\left( \phi _{1} \phi _{2}^{*} \phi _{3} \phi _{4}^{*}\right) = \frac{(p_{2} -p_{1})^{\mu }(p_{4} -p_{3})_{\mu}}{S}
+\\
+\mathop{\mathrm{Res}}_{E_{L}\rightarrow 0} \langle O_1O_2^*O_3O_4^* \rangle_s
+&= 
+    (p_2-p_1)^i  \cdot 
+    \frac{\pi_{s,ij}}{2E_s}
+    \left[ 
+        \frac{(p_4-p_3)^j}{E_{R}}
+        - \frac{(p_4-p_3)^j}{E_3+E_4-E_s}
+    \right],
+\fe
+in which $\frac{\pi_{s,ij}}{2E_s}=\langle J_i(\boldsymbol{-p_s}) J_j(\boldsymbol{p_s}) \rangle_{in-in} $. The first condition implies
+\ie
+\label{eqn: OOOO total energy pole condition}
+\langle O_1O_2^*O_3O_4^* \rangle_s = 
+    \frac{(p_{2} -p_{1})^{\mu }(p_{4} -p_{3})_{\mu}}{K_T E_L E_R} + \sum_{n=0}^{\infty} c_n^{(T)} (K_T)^n
+\fe
+while the second condition implies
+\ie
+\label{eqn: OOOO partial energy pole condition}
+\langle O_1O_2^*O_3O_4^* \rangle_s =
+    -\frac{(p_2-p_1)^i \pi_{ij} (p_4-p_3)^j}{K_T E_{L} E_{R}} + \sum_{n=0}^{\infty} c_n^{(L)} (E_L)^n
+\fe
+Subtracting \eqref{eqn: OOOO total energy pole condition} and \eqref{eqn: OOOO partial energy pole condition}, we get
+\ie
+\label{eqn: OOOO consistent series}
+0 = \frac{-\frac{(E_2-E_1)(E_4-E_3)K_T}{E_s} + \frac{(E_2-E_1)(E_4-E_3)E_{L} E_{R}}{E_s^2}}{K_T E_{L} E_{R}} + \sum_{n=0}^{\infty} c_n^{(T)} (K_T)^n -  \sum_{n=0}^{\infty} c_n^{(L)} (E_L)^n
+\fe
+where we used the identity
+\ie
+\label{eqn: useful identity for spin 1 exchange}
+(E_2-E_1)(E_3-E_4) - ((\bold{p}_2-\bold{p}_1)\cdot \bold{\hat{s}}) ((\bold{p}_4-\bold{p}_3)\cdot \bold{\hat{s}})\\
+=
+-\frac{(E_2-E_1)(E_4-E_3)K_T}{E_s} + \frac{(E_2-E_1)(E_4-E_3)E_{L} E_{R}}{E_s^2}
+\fe
+From \eqref{eqn: OOOO consistent series}, we can see that we have to choose $\sum_{n=0}^{\infty} c_n^{(T)} (K_T)^n = \frac{(E_2-E_1)(E_4-E_3)}{E_sE_LE_R}$; therefore,
+\ie
+\langle O_1O_2^*O_3O_4^* \rangle_s = 
+    \frac{(p_{2} -p_{1})^{\mu }(p_{4} -p_{3})_{\mu}}{K_T E_L E_R} + \frac{(E_2-E_1)(E_4-E_3)}{E_sE_LE_R}
+\fe
+so we could write down the full answer:
+\begin{align}
+    \langle O_{1} O_{2}^{*} O_{3} O_{4}^{*} \rangle & =\frac{( p_{2} -p_{1})_{\mu } \ \eta ^{\mu \nu }( p_{4} -p_{3})_{\nu } \ +\ K_{T} \cdot \frac{( E_{2} -E_{1})( E_{4} -E_{3})}{E_{s}}}{E_{12s} E_{34s} K_{T}} \nonumber \\
+     & \ +\frac{( p_{4} -p_{1})_{\mu } \ \eta ^{\mu \nu }( p_{2} -p_{3})_{\nu } \ +\ K_{T} \cdot \frac{( E_{4} -E_{1})( E_{2} -E_{3})}{E_{t}}}{E_{14t} E_{23t} K_{T}}
+\end{align}
+because by the dimension counting there could be no $\mathcal{O}(K_T^0E_R^0E_L^0)$ because the term like this should be composed by momentum's contraction and energy, its energy dimension should bigger than zero, but the energy dimension of $\langle O_{1} O_{2}^{*} O_{3} O_{4}^{*} \rangle$ is $(-1)$.
+
+\subsection{$\langle OO^*OO^* \rangle$ exchanging graviton}
+\textbf{Step 1}  The $\langle OO^*OO^* \rangle$ amplitude in the form of factorization numerator in s,t,u channel:
+
+
+\section{Fermionic fields in flat spacetime}
+
+\subsection{2pt correlators}
+\ie
+\langle \bar{\chi }_{-\boldsymbol{p}}^{-} \chi _{\boldsymbol{p}}^{+} \rangle = \frac{\slashed{\boldsymbol{p}}}{E_{\boldsymbol{p}}+m}
+\fe
+
+
+\subsection{3pt correlators}
+\subsubsection{$\langle J^i \bar{\chi }^{-} \chi^{+} \rangle$}
+
+\subsection{4pt correlators}
+\subsubsection{}
+
+
+
+\acknowledgments
+Acknowledgements
+
+
+
+
+
+
+\appendix
+
+\section{Notation}
+\subsection{Vector Indices}
+\subsubsection{4D metric}
+\[\eta _{\mu \nu } \ =\ \begin{bmatrix}
+1 &  &  & \\
+ & -1 &  & \\
+ &  & -1 & \\
+ &  &  & -1
+\end{bmatrix}\]
+\subsubsection{4D vector}
+\[ A_\mu = \eta_{\mu\nu}A^\nu\]\[A\cdot B = A^\mu B_\mu\]
+\subsubsection{3D vector}
+\[ A_i = \eta_{ij}A^i\]\[A^iB_i = \eta^{ij}A_iB_j=\boldsymbol{A}\cdot\boldsymbol{B}\]
+\subsection{Relative time}
+  
+\[  t:= t_2-t_1 \]
+\subsection{Spin 1/2 polarization and classical field}
+
+\subsubsection{Gamma Matrices}
+\[\gamma_{0,AB}:= \begin{bmatrix}
+        0 & I \\
+        I & 0 \\
+    \end{bmatrix} \]  
+\[\{\sigma _{i} ,\sigma _{j}\} \ =\ 2\ \delta _{ij} \ \ \ ;\ \ \sigma _{1,\alpha\dot\alpha } =\begin{bmatrix}
+0 & 1\\
+1 & 0
+\end{bmatrix} \ \ \ \ ;\ \ \sigma _{2,\alpha\dot\alpha} =\begin{bmatrix}
+0 & -i\\
+i & 0
+\end{bmatrix} \ \ \ ;\ \ \sigma _{3,\alpha\dot\alpha} =\begin{bmatrix}
+1 & 0\\
+0 & -1
+\end{bmatrix}\]
+  
+\[  \gamma_{i,AB} :=
+    \begin{bmatrix}
+        0 & \sigma_i \\
+        -\sigma_i & 0 \\
+    \end{bmatrix} \]
+    
+\[  \gamma_{5,AB} := \begin{bmatrix}
+        I & 0 \\
+        0 & -I \\
+    \end{bmatrix} \]
+\subsection{4D spin 1/2 representation}
+\begin{equation}
+\chi ^{A} =\begin{bmatrix}
+\lambda _{+}^{\alpha } +\lambda _{-}^{\alpha }\\
+\lambda _{+}^{\dot{\alpha }} -\lambda _{-}^{\dot{\alpha }}
+\end{bmatrix} \ \ \ \ \ \ \ \overline{\chi }^{A} =\begin{bmatrix}
+\lambda {_{+}^{*}}^{\alpha } -\lambda {_{-}^{*}}^{\alpha } & \lambda {_{+}^{*}}^{\dot{\alpha }} +\lambda {_{-}^{*}}^{\dot{\alpha }}
+\end{bmatrix} =\left( \chi ^{A}\right)^{+} \gamma _{0} \ 
+\end{equation}
+\subsubsection{Momentum notation}
+
+\begin{itemize}
+\item Mom convention : for every boundary condition $\displaystyle B_{0}(\boldsymbol{x})$ , it's Fourier transform is defined by
+\end{itemize}
+\begin{equation}
+B_{0}(\boldsymbol{x}) \ =\ \int \frac{d^{3}\boldsymbol{p}}{( 2\pi )^{3}} \ B_{0}(\boldsymbol{p}) \ e^{i\boldsymbol{p} \cdot \boldsymbol{x}}
+\end{equation}
+and we will use subscript to label the indices of the momentum like
+\begin{equation}
+    B_1 := B(\boldsymbol{p}_1)
+\end{equation}
+and for the composite momentum we slightly abuse our notation
+\begin{equation}
+    B_{1+2} := B(\boldsymbol{p}_{1}+\boldsymbol{p}_{2})
+\end{equation}
+
+\begin{align*}
+p_{\mu } & =\begin{bmatrix}
+p_{0} &  & p_{1} &  & p_{2} &  & p_{3}
+\end{bmatrix}\\
+E & =| p| =\sqrt{-p\cdot p} \neq p_{0}\\
+k & =p/E_{p}\\
+K_{t} & :=\sum _{i\in external} E_{i}\\
+\sigma _{0} & =I\\
+p\cdot \overline{\sigma } & :=E-p^{i} \sigma _{i}\\
+p\cdot \sigma  & :=E+p^{i} \sigma _{i}\\
+\cancel{\vec{p}} & :=\eta ^{ij} p_{i} \gamma _{j} =\begin{bmatrix}
+0 & p^{i} \sigma _{i}\\
+-p^{i} \sigma _{i} & 0
+\end{bmatrix}=:\cancel{\boldsymbol{p}}\\
+\cancel{P}_{\pm } & :=\cancel{E} \pm p^{i} \gamma _{i}\\
+\cancel{P}_{+} & =\cancel{P}=:\begin{bmatrix}
+0 & p\cdot \sigma \\
+p\cdot \overline{\sigma } & 0
+\end{bmatrix}\\
+\cancel{P}_{-} & =:\begin{bmatrix}
+0 & p\cdot \overline{\sigma }\\
+p\cdot \sigma  & 0
+\end{bmatrix}
+\end{align*}
+
+\subsubsection{Dirac Equation}
+\begin{align*}
+    \not \!\partial &:= \gamma_0\partial_0  + \gamma^i\partial_i  \\
+     (-i\not \! \partial-m ) \psi &=0\\
+     \bar\psi (i\not \! \! \overleftarrow\partial-m )  &= 0
+\end{align*}
+\subsubsection{Dirac Equation Solution (4D fermionic polarization)}
+
+\[ \psi^{(i)}(\vec{x},t) =  \psi^{u,(i)}(\vec{x}) + \psi^{v,(i)}(\vec{x}) \]
+    
+\[\psi^{u,(i)}(\vec{x}) = \int \frac{d^3p}{(2\pi)^3} \frac{1}{\sqrt{2E}}  u_{\vec{p}}^{(i)}  e^{ip^i x_i} e^{iEt} \]
+    
+\[\psi^{v,(i)}(\vec{x},t)= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E}}v_{\vec{-p}}^{(i)} e^{ip^i x_i}  e^{-iEt}\]
+   
+\[ \bar\psi^{(i)} (\vec{x})= \bar{\psi}^{u,(i)} (\vec{x})+ \bar{\psi}^{v,(i)}(\vec{x})\]
+  
+\[  \bar{\psi}^{v,(i)}(\vec{x},t) = \int \frac{d^3p}{(2\pi)^3}  \frac{1}{\sqrt{2E}} \bar v^{(i)}_{-\vec{p}}e^{i p^i x_i}  e^{-iEt}\]
+\[    \bar{\psi}^{u,(i)} (\vec{x},t)= \int \frac{d^3p}{(2\pi)^3}\frac{1}{\sqrt{2E}}\bar u^{(i)}_{\vec{p}}  e^{i p^i x_i} e^{iEt} \]
+\[ \not \! P_+ u_{\vec{p}} = \not \! P_- v_{-\vec{p}}=0=\bar{v}_{-\vec{p}} \not \! P_- = \bar{u}_{\vec{p}} \not \! P_+\]
+\subsubsection{3D Boundary Field (3D asymptotic state for correlator, 3D polarization) and Related 4D Classical Solution}
+We could decompose boundary condition of 4D bulk filed as
+\[ \gamma_0 \chi_{\pm} = \chi_{\pm}  \]\[\gamma_0\bar \chi_{\pm}=\bar \chi_{\pm}\]actually they're two different 3D fermionic field embedded in the different form
+\begin{equation}
+\chi =\begin{bmatrix}
+\lambda _{+} +\lambda _{-}\\
+\lambda _{+} -\lambda _{-}
+\end{bmatrix} \ \ \ \ \ \ \chi _{+} =\begin{bmatrix}
+\lambda _{+}\\
+\lambda _{+}
+\end{bmatrix} \ \ \ \ \chi _{-} =\begin{bmatrix}
+\lambda _{-}\\
+-\lambda _{-}
+\end{bmatrix} \label{4to3fermion}
+\end{equation}\begin{equation}
+\overline{\chi } =\begin{bmatrix}
+\lambda _{+}^{*} -\lambda _{-}^{*} & \lambda _{+}^{*} +\lambda _{-}^{*}
+\end{bmatrix} \ \ \ \ \overline{\chi }_{+} =\begin{bmatrix}
+\lambda _{+}^{*} & \lambda _{+}^{*}
+\end{bmatrix} \ \ \ \ \overline{\chi }_{-} =\begin{bmatrix}
+-\lambda _{-}^{*} & \lambda _{-}^{*}
+\end{bmatrix}\label{4to3fermion2}
+\end{equation}
+and on the boundary, the conjugate relationship will be
+\begin{equation}
+  \begin{array}{l}
+\chi _{+} /\lambda _{+}\leftarrow conjugate\rightarrow \overline{\chi _{+}} /\lambda _{+}^{*}\\
+\overline{\chi _{-}} /\lambda _{-}^{*}\leftarrow conjugate\rightarrow \chi _{-} /\lambda _{-}
+\end{array}
+\end{equation}
+if we choose $(\chi_+,\bar \chi_-)$ (equivalently $\lambda_+,\lambda_-^*$) as Dirichlet boundary condition and its related classical field in 4D background ,with the reference vector basis \(\xi ^{( 1)} =\ \ \eta ^{( 1)} =\begin{bmatrix}
+1\\
+0
+\end{bmatrix} \ \ ;\ \ \xi ^{( 2)} =\ \ \eta ^{( 2)} =\begin{bmatrix}
+0\\
+1
+\end{bmatrix}\),
+will be
+\[u_{\vec{p}}^{(i)} = \begin{bmatrix}
+        \sqrt{p \cdot\sigma} {\xi}^{(i)} \\
+        \sqrt{p \cdot \bar\sigma} {\xi}^{(i)}
+    \end{bmatrix} \]
+    \[\sum_{(i)\in {1,2}}  c^{(i)}_+ u_{\vec{p}}^{(i)} = (1+\frac{p^i\gamma_i }{E_p}) (\chi^+)\]
+    
+\[v_{-\vec{p}}^{(i)} = \begin{bmatrix}
+        \sqrt{p\cdot\bar\sigma} {\eta}^{(i)} \\
+        -\sqrt{p\cdot\sigma} {\eta}^{(i)}
+    \end{bmatrix}\]
+     \[\sum_{(i)\in {1,2}}  d^{(i)}_+ v_{-\vec{p}}^{(i)} = (1-\frac{p^i \gamma_i}{E}) (\chi^+)\]
+     
+    
+\[\bar u_{\vec{p}}^{(i)} = u^{(i),+} \gamma_0 = \begin{bmatrix}
+    \xi^{+,(i)} \sqrt{p \cdot\bar\sigma} && \xi^{+,(i)} \sqrt{p \cdot\sigma}
+    \end{bmatrix} \] \[\sum_{(i)\in {1,2}}  c^{(i)}_- \bar u_{\vec{p}}^{(i)} =  (\bar \chi_-)(1-\frac{p^i \gamma_i}{E})\]
+    
+    
+    
+\[\bar v_{\vec{p}}^{\alpha} = v^{\alpha,+} \gamma_0  = \begin{bmatrix}
+   - \sqrt{p \cdot \sigma}\eta^{+} && \sqrt{p \cdot\bar\sigma}\eta^+
+    \end{bmatrix}\]\[\sum_{(i)\in {1,2}}  d^{(i)}_- \bar v_{-\vec{p}}^{(i)} =  (\bar \chi_-)(1+\frac{p^i \gamma_i}{E})\]
+in above, we have defined the square root of momentum's Pauli's matrices representation like:
+\[
+\sqrt{p\cdot \sigma } =\frac{p\cdot \sigma }{\sqrt{2|E_{p} |}} \ \ such\ that\ \left(\sqrt{p\cdot \sigma }\right)^{2} =sgn( E) \ ( p\cdot \sigma )
+\]
+\[
+\sqrt{p\cdot \overline{\sigma }} =\frac{p\cdot \overline{\sigma }}{\sqrt{2|E_{p} |}} \ \ such\ that\ \left(\sqrt{p\cdot \overline{\sigma }}\right)^{2} =sgn( E) \ ( p\cdot \overline{\sigma })
+\]
+
+\subsubsection{4D Charge Conjugate and Majorana Spinor, and its 3D fermion embedding (not completed)}
+We define the B-operator
+\begin{equation}
+B=-i\gamma_2
+\end{equation}
+in which satisfy the identity
+\begin{equation}
+B=B^T
+\end{equation}
+\begin{equation}
+B^2=1
+\end{equation}\begin{equation}
+B\gamma_{\mu}B=-\gamma^{T}_{\mu}
+\end{equation}
+and we could define charge conjugate under B
+\begin{equation*}
+C : \ \ \psi \rightarrow B\psi^*
+\end{equation*}
+we define $\Upsilon$ as Majornara Spinor
+\begin{equation}
+C\Upsilon= \Upsilon \label{majcond}
+\end{equation}
+\begin{equation*}
+\Upsilon =\begin{bmatrix}
+\upsilon \\
+ (i \sigma_2)\upsilon^* 
+\end{bmatrix}
+\end{equation*}
+Now we wants the Majornara fermion as the boundary condition of the classical solution, we wants to split it into two 3D spinor:
+\begin{equation}
+\Upsilon= \Upsilon_+ +\Upsilon_-
+\end{equation}\begin{equation}
+\gamma_0 \Upsilon_{\pm} = \pm \Upsilon_{\pm}
+\end{equation}
+and we should be careful that
+\begin{equation}
+\gamma_0 \Upsilon^*_{\pm} = \pm \Upsilon^*_{\pm}
+\end{equation}
+so we put this decomposition into Majornara condition (\ref{majcond}):
+\begin{equation}
+C(\Upsilon_+ + \Upsilon_-) =(\Upsilon_+ + \Upsilon_-)=(-i\gamma_2)(\Upsilon^*_+ + \Upsilon^*_-)
+\end{equation}
+($\dots$)
+
+Notice it's also possible to define the other presentation of the charge conjugate like
+\begin{equation}
+B'=i\gamma_5 B
+\end{equation}
+notice now $B'^T B'=1$,$B'^T=-B'^T$,and $B'^T\gamma_\mu B'=\gamma^T_\mu$,
+and we could define charge conjugate under B'
+\begin{equation*}
+C' : \ \ \psi \rightarrow B'\psi^*
+\end{equation*}but we'll show that use C' to define Majornara spinor like below is an alternative representation as boundary condition too.
+\begin{equation*}
+\Upsilon' =\begin{bmatrix}
+\upsilon' \\
+ (\sigma_2)\upsilon'^* 
+\end{bmatrix}
+\end{equation*}
+\subsection{3 Amplitude notation}
+M in our thesis means the amplitude, and the field in the parentheses means the external field's spin 
+\begin{center}
+\newcolumntype{K}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{|K|K|K|}
+\hline 
+ \textbf{(field's type)} & \textbf{not \!ation} & \textbf{polarization} \\
+\hline\hline 
+ scalar & $\displaystyle \phi $ &  \\
+\hline 
+ fermion & $\displaystyle \chi $ & $\displaystyle u_{A}$ \\
+\hline 
+ fermion conjuate & $\displaystyle \overline{\chi }$ & $\displaystyle \overline{u_{A}}$ \\
+\hline 
+ vector (photon) & $\displaystyle \gamma $ & $\displaystyle \epsilon _{\mu }$ \\
+\hline 
+ spin 3/2 particle (gravitino) & $\displaystyle \psi $ & $\displaystyle u_{A}$$\displaystyle \epsilon _{\mu }$ \\
+\hline 
+ {\small spin 3/2 particle conjugate} & $\displaystyle \overline{\psi }$ & $\displaystyle \overline{u_{A}}$$\displaystyle \epsilon _{\mu }$ \\
+\hline 
+ tensor (graviton) & $\displaystyle h$ & $\displaystyle \epsilon _{\mu }$$\displaystyle \epsilon _{\nu }$ \\
+ \hline
+\end{tabularx}
+\end{center}
+
+and the subscripts means the label of their momentum,like
+\begin{equation}
+\phi(\vec p_1) = \phi_1
+\end{equation}
+so take QED Compton Amplitude as example, we have$M(\gamma_1 \bar\chi_2 \chi_3)=\bar u_2 \not \! \gamma_1u_3 $ and we define the amplitude with the polarization of the field extracted (the indices on the amplitude M is the same order as the field, if not all the polarization field is extracted then the indices with the same scripted number as the its field)
+\begin{equation}
+M(\gamma_1 \bar\chi_2 \chi_3)=\bar u_2 \not \! \gamma_1u_3 = \epsilon_1^{\mu_1} M_{\mu_1}(\gamma_{1} \bar\chi_2 \chi_3) =  \epsilon_1^\mu \bar u_{2,A} M^{AB}_{\mu}(\gamma_{1} \bar\chi_2 \chi_3) u_{3,B}
+\end{equation}
+with 
+\begin{equation}
+M_{\mu_1}(\gamma_1\overline{\chi_2} \chi_3) = \bar u_2  \gamma_{\mu_1}u_3
+\end{equation}
+\begin{equation}
+M^{AB}_\mu(\gamma_1\overline{\chi_2} \chi_3) =  \gamma^{A,B}_{\mu}
+\end{equation}
+and because the polarization of amplitude have following property
+\begin{equation}
+p^{\mu } \epsilon _{\mu } =0\ \ \ such\ that\ \ \epsilon _{0} =\  {k} \cdot  {\epsilon }=- k^i \epsilon_i
+\end{equation}
+so we could one step further extract the 3D polarization vector and have vector indices amplitude
+\begin{equation}
+M(\gamma_1 \bar\chi_2 \chi_3) = \epsilon_1^{\mu_1} M_{\mu_1}(\gamma_{1} \bar\chi_2 \chi_3) = \epsilon_1^{i_1} \tilde{M}_{i_1}(\gamma_{1} \bar\chi_2 \chi_3) = {\epsilon}^{i_1}_1  {\tilde{M}}_{i_1}(\gamma_{1} \bar\chi_2 \chi_3) 
+\end{equation}in explicit form
+\begin{equation}
+\tilde{M}_{i_1}(\gamma_{1} \bar\chi_2 \chi_3)  = -k_{i_1} M_0(\gamma_{1} \bar\chi_2 \chi_3) +M_{i_1}(\gamma_{1} \bar\chi_2 \chi_3) = -k_{i_1}\bar u_2 \gamma_0 u_3 + \bar u_2 \gamma_{i_1} u_3
+\end{equation}
+
+\subsection{4 Cosmological Correlator and In-In formalism}
+We label the correlator with the wedge bracket and the boundary field (as Dirichlet boundary condition of Equation of Motion) inside the bracket:
+
+\newcolumntype{K}{>{\centering\arraybackslash}X}
+\begin{tabularx}{\textwidth}{|K|K|K|}
+\hline 
+ \textbf{(field's type)} & \textbf{notation}(3D representation/ 4D representation) & \textbf{boundary condition}(3D representation/ 4D representation) \\
+\hline\hline 
+ scalar & $\displaystyle \phi $ & $\displaystyle \phi _{0}$ \\
+\hline 
+ fermion  & $ $$\displaystyle \lambda _{+}$ / $\displaystyle \chi _{+}$ & $\displaystyle \lambda _{+,0,\alpha }$ /$\displaystyle \ \chi _{+0,A}$ \\
+\hline 
+ fermion conjuage & $\displaystyle \lambda _{-}^{*}$/$\displaystyle \overline{\chi _{-}}$ & $\displaystyle \lambda _{-,0,\alpha }^{*}$$ $/ $\displaystyle \overline{\chi }_{-0.A}$ \\
+\hline 
+ vector (photon) & $\displaystyle J$ & $\displaystyle \epsilon \mathbf{_{0,i}}$ \\
+\hline 
+ spin 3/2 particle (gravitino) & $\displaystyle \rho _{+}$/$\displaystyle \ \psi _{+}$ & $\displaystyle \lambda _{+,0,\alpha }$$\displaystyle \epsilon \mathbf{_{0,i}}$ / $\displaystyle \chi _{+,A} \epsilon \mathbf{_{0,i}}$ \\
+\hline 
+ {\small spin 3/2 particle conjugate} & $\displaystyle \rho _{-}^{*}$ /$\displaystyle \overline{\ \psi _{-}}$ & $\displaystyle \lambda _{-,0,\alpha }^{*}$$\displaystyle \epsilon \mathbf{_{0,i}}$ / $\displaystyle \overline{\chi }_{-.A} \epsilon \mathbf{_{0,i}}$ \\
+\hline 
+ tensor (graviton) & $\displaystyle T$ & $\displaystyle \epsilon \mathbf{_{0,i}}$$\displaystyle \epsilon _{0,j}$ \\
+ \hline
+\end{tabularx}
+
+like the QED Compton Correlator will be labeled as
+\begin{equation}
+\left<  {J}_{1}^{i}\overline{\chi}_{-,2,A} \chi_{+,3,B}\right> =\left( (1-\cancel{ {k_{2}}} \ )\frac{-\gamma _{0} {k}_{1}^{i} + {\gamma }^{i}}{K_{t}} (1+\cancel{ {k}}_{3} )\right)_{AB}
+\end{equation}
+and we can define the Correlator contracted with boundary field then just omit the respondent indices
+\begin{equation}
+<  {J}_{1}\overline{\chi}_{-,2,A} \chi_{+,3,B}> =\left( (1-\cancel{ {k_{2}}} \ )\frac{-\gamma _{0} {k}_{1,i}   {\epsilon }_{1}^i +\cancel{ {\epsilon _{1}}}}{K_{t}} (1+\cancel{ {k}}_{3} )\right)_{AB}
+\end{equation}
+if every boundary filed is contracted inside the correlator:
+\begin{equation}
+\left<  {J}_{1}^{i}\overline{\chi}_{-,2} \chi_{+,3}\right> =\overline{\chi}_{2,-}\left( (1-\cancel{ {k_{2}}} \ )\frac{-\gamma _{0} {k}_{1}^{i} + {\gamma }^{i}}{K_{t}} (1+\cancel{ {k}}_{3} )\right) \chi_{3,+}
+\end{equation}
+and for in-in formalism respondent to correlator we label the in-in correlation function with
+\begin{equation}
+\langle \overline{\chi}_{-,-p,A} \chi_{+,p,B} \rangle _{in-in} =\frac{( 1-\gamma _{0})}{2}\frac{1}{2\langle \overline{\chi}_{-,-p,A} \chi_{+,p,B} \rangle }\frac{( 1+\gamma _{0})}{2} =\frac{( 1-\gamma _{0})}{2}\frac{(-\not\!{{\boldsymbol{k}}})}{2}\frac{( 1+\gamma _{0})}{2}
+\end{equation}
+Notice for fermionic correlator, the 4D fermionic boundary field is exactly 3D fermionic boundary field's embedding, as (\ref{4to3fermion}),(\ref{4to3fermion2}) shows. So we also have 3D correlator form can be transformed by 4D respondent ones.
+\begin{align*}
+< \boldsymbol{J}_{1}\overline{\chi }_{-,2} \chi _{+,3}>  & =\overline{\chi }_{2,-}\left( (1-\cancel{\boldsymbol{k_{2}}} \ )\frac{-\gamma _{0}\boldsymbol{k}_{1} \cdot \boldsymbol{\epsilon }_{1} +\cancel{\boldsymbol{\epsilon _{1}}}}{K_{t}} (1+\cancel{\boldsymbol{k}}_{3} )\right) \chi _{3+}\\
+ & =\begin{bmatrix}
+-\lambda _{2,-}^{*} & \lambda _{2,-}^{*}
+\end{bmatrix}\left( (1-\cancel{\boldsymbol{k_{2}}} \ )\frac{-\gamma _{0}\boldsymbol{k}_{1} \cdot \boldsymbol{\epsilon }_{1} +\cancel{\boldsymbol{\epsilon _{1}}}}{K_{t}} (1+\cancel{\boldsymbol{k}}_{3} )\right)\begin{bmatrix}
+\lambda _{3,+}\\
+\lambda _{3,+}
+\end{bmatrix}\\
+ & =\lambda _{2,-}^{*} \ \{\frac{2}{K_{t}} \cdot [ -(\boldsymbol{k}_{2} \cdot \boldsymbol{\sigma })(\boldsymbol{k}_{1} \cdot \boldsymbol{\epsilon }_{1}) -(\boldsymbol{k}_{3} \cdot \boldsymbol{\sigma })(\boldsymbol{k}_{2} \cdot \boldsymbol{\epsilon }_{1})\\
+ & \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -(\boldsymbol{\epsilon _{1} \cdot \sigma }) +(\boldsymbol{k}_{2} \cdot \boldsymbol{\sigma })(\boldsymbol{\epsilon _{1} \cdot \sigma })(\boldsymbol{k}_{1} \cdot \boldsymbol{\sigma })]\} \lambda _{3,+}\\
+ & =\left< \boldsymbol{J}_{1} \lambda _{2,-}^{*} \ \lambda _{3,+}\right> 
+\end{align*}
+\begin{equation}
+\left< \boldsymbol{J}_{1}^{i} \lambda _{2,-,\alpha }^{*} \ \lambda _{3,+,\dot{\alpha }}\right> =\frac{2\ \left[ -(\boldsymbol{k}_{2} \cdot \boldsymbol{\sigma })\left(\boldsymbol{k}_{1}^{i}\right) -(\boldsymbol{k}_{3} \cdot \boldsymbol{\sigma })\left(\boldsymbol{k}_{2}^{i}\right) -\left(\boldsymbol{\sigma }^{i}\right) +(\boldsymbol{k}_{2} \cdot \boldsymbol{\sigma })\left(\boldsymbol{\sigma }^{i}\right)(\boldsymbol{k}_{1} \cdot \boldsymbol{\sigma })\right]_{\alpha \ \dot{\alpha }}}{K_{t}}
+\end{equation}
+
+\section{Ward Identity}
+For a general amplitudes with integer spin $s$, the amplitude can be written as $\epsilon_{\mu_1 \cdots \mu_s} M^{\mu_1 \cdots \mu_s}$. In this section, we show how to rewrite the amplitudes as $\epsilon_{i_1 \cdots i_s} M^{i_1 \cdots i_s}$. This will be useful to determine the transversal part of the correlator.
+\subsubsection{Spin 1 field}
+A scattering amplitude containing a spin 1 field can be written as 
+\ie
+M = \epsilon^\mu M_\mu
+\fe
+Ward identity states that we have the residual gauge freedom to transform $\epsilon^\mu \rightarrow \epsilon^\mu + \alpha p^\mu$. Take $\alpha \equiv -\frac{p^\mu}{E_p}$, we have
+\ie
+&\epsilon^0 \rightarrow 0
+\\
+&\epsilon^i \rightarrow \epsilon^i - \frac{p^i}{E_p}\epsilon^0 = \epsilon^i + \frac{p^i p^j}{E_p^2}\epsilon_j = \pi^{ij} \epsilon_j
+\fe
+Therefore, we can rewrite the amplitude as
+\ie
+\label{eqn: spin 1 amplitude written in pi_ij}
+M = \epsilon_i \pi^{ij} M_j
+\fe
+Note that this equation holds only if the total four-momentum is conserved.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{thebibliography}{99}
+
+
+\bibitem{label}
+Authors,
+"Name of the paper"
+[arXiv: [hep-th]].
+
+
+\end{thebibliography}
+
+
+
+\end{document}
+--
